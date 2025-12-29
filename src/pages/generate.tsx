@@ -119,18 +119,12 @@ export default function Generate() {
             上传图片并选择风格
           </h2>
           <div className="mb-6">
-            <div
-              className="w-full p-2 border cursor-pointer text-center bg-gray-200"
+            <button
+              type="button"
+              className="w-full p-2 border cursor-pointer text-center bg-gray-200 block"
               onClick={() =>
                 document.getElementById("contentImageInput")?.click()
               }
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  document.getElementById("contentImageInput")?.click();
-                }
-              }}
             >
               <div className="w-full aspect-square flex items-center justify-center">
                 {contentImage ? (
@@ -147,13 +141,10 @@ export default function Generate() {
                   />
                 )}
               </div>
-              <label
-                htmlFor="contentImageInput"
-                className="block text-gray-800 mt-2 text-center"
-              >
+              <span className="block text-gray-800 mt-2 text-center">
                 内容图
-              </label>
-            </div>
+              </span>
+            </button>
             <input
               type="file"
               id="contentImageInput"
@@ -162,18 +153,12 @@ export default function Generate() {
             />
           </div>
           <div className="mb-6">
-            <div
-              className="w-full p-2 border cursor-pointer text-center bg-gray-200"
+            <button
+              type="button"
+              className="w-full p-2 border cursor-pointer text-center bg-gray-200 block"
               onClick={() =>
                 document.getElementById("styleImageInput")?.click()
               }
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  document.getElementById("styleImageInput")?.click();
-                }
-              }}
             >
               <div className="w-full aspect-square flex items-center justify-center">
                 {styleImage ? (
@@ -190,13 +175,10 @@ export default function Generate() {
                   />
                 )}
               </div>
-              <label
-                htmlFor="styleImageInput"
-                className="block text-gray-800 mt-2 text-center"
-              >
+              <span className="block text-gray-800 mt-2 text-center">
                 风格图
-              </label>
-            </div>
+              </span>
+            </button>
             <input
               type="file"
               id="styleImageInput"
@@ -281,8 +263,8 @@ export default function Generate() {
         </div>
         <div className="lg:w-1/12 p-6 bg-gray-200">
           <h2 className="text-md font-bold mb-6 text-gray-800">历史记录</h2>
-          {history.map((image) => (
-            <div key={image} className="w-24 h-24">
+          {history.map((image, index) => (
+            <div key={`${image}-${index}`} className="w-24 h-24">
               <img
                 src={image}
                 alt="History"
