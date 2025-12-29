@@ -119,6 +119,12 @@ export default function Generate() {
             上传图片并选择风格
           </h2>
           <div className="mb-6">
+            <label
+              htmlFor="contentImageInput"
+              className="block text-gray-800 mb-2 text-center"
+            >
+              内容图
+            </label>
             <div
               className="w-full p-2 border cursor-pointer text-center bg-gray-200"
               onClick={() =>
@@ -128,6 +134,7 @@ export default function Generate() {
               tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
                   document.getElementById("contentImageInput")?.click();
                 }
               }}
@@ -147,12 +154,6 @@ export default function Generate() {
                   />
                 )}
               </div>
-              <label
-                htmlFor="contentImageInput"
-                className="block text-gray-800 mt-2 text-center"
-              >
-                内容图
-              </label>
             </div>
             <input
               type="file"
@@ -162,6 +163,12 @@ export default function Generate() {
             />
           </div>
           <div className="mb-6">
+            <label
+              htmlFor="styleImageInput"
+              className="block text-gray-800 mb-2 text-center"
+            >
+              风格图
+            </label>
             <div
               className="w-full p-2 border cursor-pointer text-center bg-gray-200"
               onClick={() =>
@@ -171,6 +178,7 @@ export default function Generate() {
               tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
                   document.getElementById("styleImageInput")?.click();
                 }
               }}
@@ -190,12 +198,6 @@ export default function Generate() {
                   />
                 )}
               </div>
-              <label
-                htmlFor="styleImageInput"
-                className="block text-gray-800 mt-2 text-center"
-              >
-                风格图
-              </label>
             </div>
             <input
               type="file"
@@ -281,8 +283,8 @@ export default function Generate() {
         </div>
         <div className="lg:w-1/12 p-6 bg-gray-200">
           <h2 className="text-md font-bold mb-6 text-gray-800">历史记录</h2>
-          {history.map((image) => (
-            <div key={image} className="w-24 h-24">
+          {history.map((image, index) => (
+            <div key={`${image}-${index}`} className="w-24 h-24">
               <img
                 src={image}
                 alt="History"
