@@ -125,7 +125,6 @@ export default function Generate() {
               onClick={() =>
                 document.getElementById("contentImageInput")?.click()
               }
-              aria-label="Upload content image"
             >
               <div className="w-full aspect-square flex items-center justify-center">
                 {contentImage ? (
@@ -160,7 +159,6 @@ export default function Generate() {
               onClick={() =>
                 document.getElementById("styleImageInput")?.click()
               }
-              aria-label="Upload style image"
             >
               <div className="w-full aspect-square flex items-center justify-center">
                 {styleImage ? (
