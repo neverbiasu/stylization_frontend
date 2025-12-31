@@ -119,8 +119,9 @@ export default function Generate() {
             上传图片并选择风格
           </h2>
           <div className="mb-6">
-            <div
-              className="w-full p-2 border cursor-pointer text-center bg-gray-200"
+            <button
+              type="button"
+              className="w-full p-2 border cursor-pointer text-center bg-gray-200 block"
               onClick={() =>
                 document.getElementById("contentImageInput")?.click()
               }
@@ -140,10 +141,10 @@ export default function Generate() {
                   />
                 )}
               </div>
-              <label className="block text-gray-800 mt-2 text-center">
+              <span className="block text-gray-800 mt-2 text-center">
                 内容图
-              </label>
-            </div>
+              </span>
+            </button>
             <input
               type="file"
               id="contentImageInput"
@@ -152,8 +153,9 @@ export default function Generate() {
             />
           </div>
           <div className="mb-6">
-            <div
-              className="w-full p-2 border cursor-pointer text-center bg-gray-200"
+            <button
+              type="button"
+              className="w-full p-2 border cursor-pointer text-center bg-gray-200 block"
               onClick={() =>
                 document.getElementById("styleImageInput")?.click()
               }
@@ -173,10 +175,10 @@ export default function Generate() {
                   />
                 )}
               </div>
-              <label className="block text-gray-800 mt-2 text-center">
+              <span className="block text-gray-800 mt-2 text-center">
                 风格图
-              </label>
-            </div>
+              </span>
+            </button>
             <input
               type="file"
               id="styleImageInput"
@@ -188,11 +190,9 @@ export default function Generate() {
             <label className="block text-gray-800 mb-2">选择预置风格</label>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {styles.map((style) => (
-                <img
+                <button
                   key={style.id}
-                  src={style.imageUrl}
-                  alt={style.name}
-                  className={`w-full aspect-square object-cover rounded-lg cursor-pointer border-2 ${
+                  className={`block w-full aspect-square rounded-lg border-2 overflow-hidden focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                     selectedStyle === style.id
                       ? "border-indigo-300"
                       : "border-gray-300"
@@ -208,7 +208,14 @@ export default function Generate() {
                         setStyleImage(file);
                       });
                   }}
-                />
+                  type="button"
+                >
+                  <img
+                    src={style.imageUrl}
+                    alt={style.name}
+                    className="w-full h-full object-cover"
+                  />
+                </button>
               ))}
             </div>
           </div>
@@ -257,10 +264,10 @@ export default function Generate() {
         <div className="lg:w-1/12 p-6 bg-gray-200">
           <h2 className="text-md font-bold mb-6 text-gray-800">历史记录</h2>
           {history.map((image, index) => (
-            <div key={index} className="w-24 h-24">
+            <div key={`${image}-${index}`} className="w-24 h-24">
               <img
                 src={image}
-                alt={`History ${index}`}
+                alt="History"
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>

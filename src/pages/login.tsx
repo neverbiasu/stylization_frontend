@@ -14,16 +14,22 @@ export default function Login() {
           </h2>
           <form>
             <div className="mb-4">
-              <label className="block text-gray-600 mb-2">Email</label>
+              <label htmlFor="email" className="block text-gray-600 mb-2">
+                Email
+              </label>
               <input
+                id="email"
                 type="email"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder-gray-400"
                 placeholder="Enter your email"
               />
             </div>
             <div className="mb-6">
-              <label className="block text-gray-600 mb-2">Password</label>
+              <label htmlFor="password" className="block text-gray-600 mb-2">
+                Password
+              </label>
               <input
+                id="password"
                 type="password"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder-gray-400"
                 placeholder="Enter your password"
@@ -37,9 +43,12 @@ export default function Login() {
             </button>
           </form>
           <div className="mt-6 text-center">
-            <a href="#" className="text-blue-600 hover:underline">
+            <button
+              type="button"
+              className="text-blue-600 hover:underline bg-transparent border-none p-0 cursor-pointer"
+            >
               Forgot your password?
-            </a>
+            </button>
           </div>
         </div>
       </div>

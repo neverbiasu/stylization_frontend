@@ -22,58 +22,54 @@ export default function Navbar() {
           </div>
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" passHref legacyBehavior>
-              <a
-                className={`text-gray-600 hover:text-gray-800 rounded-lg px-3 py-2 ${
-                  pathname === "/" ? "bg-gray-100" : ""
-                }`}
-              >
-                Home
-              </a>
+            <Link
+              href="/"
+              className={`text-gray-600 hover:text-gray-800 rounded-lg px-3 py-2 ${
+                pathname === "/" ? "bg-gray-100" : ""
+              }`}
+            >
+              Home
             </Link>
-            <Link href="/generate" passHref legacyBehavior>
-              <a
-                className={`text-gray-600 hover:text-gray-800 rounded-lg px-3 py-2 ${
-                  pathname === "/generate" ? "bg-gray-100" : ""
-                }`}
-              >
-                Generate
-              </a>
+            <Link
+              href="/generate"
+              className={`text-gray-600 hover:text-gray-800 rounded-lg px-3 py-2 ${
+                pathname === "/generate" ? "bg-gray-100" : ""
+              }`}
+            >
+              Generate
             </Link>
-            <Link href="/community" passHref legacyBehavior>
-              <a
-                className={`text-gray-600 hover:text-gray-800 rounded-lg px-3 py-2 ${
-                  pathname === "/community" ? "bg-gray-100" : ""
-                }`}
-              >
-                Community
-              </a>
+            <Link
+              href="/community"
+              className={`text-gray-600 hover:text-gray-800 rounded-lg px-3 py-2 ${
+                pathname === "/community" ? "bg-gray-100" : ""
+              }`}
+            >
+              Community
             </Link>
-            <Link href="/pricing" passHref legacyBehavior>
-              <a
-                className={`text-gray-600 hover:text-gray-800 rounded-lg px-3 py-2 ${
-                  pathname === "/pricing" ? "bg-gray-100" : ""
-                }`}
-              >
-                Pricing
-              </a>
+            <Link
+              href="/pricing"
+              className={`text-gray-600 hover:text-gray-800 rounded-lg px-3 py-2 ${
+                pathname === "/pricing" ? "bg-gray-100" : ""
+              }`}
+            >
+              Pricing
             </Link>
-            <Link href="/contact" passHref legacyBehavior>
-              <a
-                className={`text-gray-600 hover:text-gray-800 rounded-lg px-3 py-2 ${
-                  pathname === "/contact" ? "bg-gray-100" : ""
-                }`}
-              >
-                Contact
-              </a>
+            <Link
+              href="/contact"
+              className={`text-gray-600 hover:text-gray-800 rounded-lg px-3 py-2 ${
+                pathname === "/contact" ? "bg-gray-100" : ""
+              }`}
+            >
+              Contact
             </Link>
           </div>
           {/* Login Button */}
           <div className="flex items-center">
-            <Link href="/login" passHref legacyBehavior>
-              <a className="text-gray-600 hover:text-gray-800 rounded-lg px-3 py-2 bg-gray-100">
-                Login
-              </a>
+            <Link
+              href="/login"
+              className="text-gray-600 hover:text-gray-800 rounded-lg px-3 py-2 bg-gray-100"
+            >
+              Login
             </Link>
           </div>
         </div>
